@@ -1,0 +1,309 @@
+*{
+	font-family:"Lato","游ゴシック体","Yu Gothic","YuGothic","ヒラギノ角ゴシック Pro","Hiragino Kaku Gothic Pro","メイリオ","Meiryo, Osaka","ＭＳ Ｐゴシック","MS PGothic","sans-serif";
+}
+
+body {
+    margin: 0;
+    display: flex;
+    font-size: 1rem;
+    min-height: 100vh;
+/*   box-sizing: border-box;*/
+}
+main {
+    width: 800px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    color: maroon;
+}
+h1
+{
+   text-align: center;
+   color:maroon;
+   font-size: 1.2em;
+   margin-top: 30px;
+}
+
+h1::first-line{
+    color:#C0C0C0;
+    font-size: 0.7em;
+  }
+
+
+footer
+  {
+     text-align: center; 
+     color:#333;
+     font-size: 12px;
+     
+  }
+  
+footer::first-line{
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    
+
+  
+
+
+.space{
+    display: flex;
+    justify-content: center;
+} 
+
+/*　dotto カッコ textエリア*/
+.box {
+    position: relative;
+    padding: 0.25em 1em;
+    margin: 2em 0;
+    top: 0;
+    width: 90%;
+    font-size: 0.9em;
+}
+.box:before, .box:after{ 
+    position: absolute;
+    top: 0;
+    content:'';
+    width: 10px;
+    height: 100%;
+ /*   display: inline-block;
+    box-sizing: border-box;*/
+}
+.box:before{
+    border-left: dotted 2px #808080;
+    border-top: dotted 2px #808080;
+    border-bottom: dotted 2px #808080;
+    left: 0;
+}
+.box:after{
+    border-top: dotted 2px #808080;
+    border-right: dotted 2px #808080;
+    border-bottom: dotted 2px #808080;
+    right: 0;
+}
+.box p {
+    margin: 0; 
+    padding: 0;
+
+
+}
+
+/* その場でふわっとフェードインstart */
+.fadeIn{
+    animation-name:fadeInAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeInAnime{
+      from {
+        opacity: 0;
+      }
+    
+      to {
+        opacity: 1;
+      }
+    }
+/* その場でふわっとフェードイン end */
+
+
+/*　カッコ ここまで*/
+
+
+/* 下からふわっとフェードイン start */
+
+.fadeUp{
+    animation-name:fadeUpAnime;
+    animation-duration:1.2s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeUpAnime{
+      from {
+        opacity: 0;
+      transform: translateY(100px);
+      }
+    
+      to {
+        opacity: 1;
+      transform: translateY(0);
+      }
+    }
+/* 下からふわっとフェードイン end */
+
+
+
+
+aside {
+    width: 10%;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*tag風 リストver
+li {
+    color: #808080;
+    padding: 0.5em;
+    display: inline-block;
+    line-height: 1.1;
+    background: #fff0cd;
+    vertical-align: middle;
+    border-radius: 25px 0px 0px 25px;
+    margin: 1em;
+    font-size: 10px;
+    
+  }
+  
+
+ li:before {
+    content: '●';
+    color: white;
+    margin-right:8px;
+  }
+
+tag風　ここまで*/
+
+/* 縫い目風 リスト*/
+li {
+    position: relative;
+    background: #fff0cd;
+    box-shadow: 0px 0px 0px 5px #fff0cd;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    color: #454545;
+    margin:1em;
+    transition 0.3s;/*0,3秒かける*/
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  li:after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    border-width: 0 0 15px 15px;
+    border-style: solid;
+    border-color: #fff #fff #fff0cd;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  }
+  li:hover{
+    background: #fdd610;
+    box-shadow: 0px 0px 0px 5px #fdd610;
+    text-decoration: underline;
+    transform: scale(1.1);/*1.1倍に拡大します*/
+  }
+
+ /* 縫い目風 リストここまで　*/
+
+
+
+aside .pcfooter{
+    padding-left: 1em;
+    font-size: 11px;
+}
+
+
+
+footer {
+    display: none;
+}
+
+.small{
+    font-size: 11px;
+    margin: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        height:auto;
+        flex-direction: column;
+    }
+    main {
+        width: 100%;
+        flex: 1;
+    }
+    img
+    {
+        width: 100%;
+    }  
+
+
+    footer {
+        display: block;
+        margin-bottom: 60px;
+        text-align: center;
+        padding-top: 7px;
+        border-top: dotted 2px #808080;
+
+    }
+    footer::first-letter{
+    color: maroon;
+    }
+
+    .pcfooter {
+        display: none;
+    }
+
+
+    aside {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    ul {
+        display: flex;
+    }
+
+
+
+
+    /*tag風 リストver*/
+    li{
+        flex: 1;
+        color: #808080;
+        padding: 0.5em;
+     /*  display: inline-block;
+        line-height: 1.1;*/
+        background: #fff0cd;
+        vertical-align: middle;
+        border-radius: 25px 0px 0px 25px;
+        margin: 1em;
+        font-size: 12px;
+        transition 0.3s;/*3秒かける*/
+    
+    }
+    li:after{
+        content: none;
+    }
+
+    li:before {
+      /*  content: '●';
+        color: white;*/
+        margin-right:8px;
+    }
+    li:hover{
+        background: #fdd610;
+        box-shadow: 0px 0px 0px 5px #fdd610;
+        transform: scale(1.1);/*1.2倍に拡大します*/
+      }
+       /*tag風 リストverここまで*/
+
+}
+
+
